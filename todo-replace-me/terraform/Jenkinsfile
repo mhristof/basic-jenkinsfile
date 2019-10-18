@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages {
+        stage('init') {
+            steps {
+                sh 'cd todo-replace-me/terraform && terraform init --no-color'
+            }
+        }
+        stage('plan') {
+            steps {
+                sh 'cd todo-replace-me/terraform && terraform plan --no-color --out tf.plan'
+            }
+        }
+        stage('apply') {
+            steps {
+                sh 'cd todo-replace-me/terraform && terraform apply tf.plan'
+            }
+        }
+    }
+}

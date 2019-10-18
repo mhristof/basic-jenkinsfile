@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                echo 'Building'
+                sh 'cd todo-replace-me/packer && packer build *.json'
             }
         }
     }
