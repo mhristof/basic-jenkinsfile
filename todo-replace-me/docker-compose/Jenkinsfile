@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'cd todo-replace-me/docker && docker-compose build'
+                sh 'cd todo-replace-me/docker-compose && docker-compose build'
             }
         }
         stage('up') {
             steps {
-                sh 'cd todo-replace-me/docker && docker-compose up -d'
+                sh 'cd todo-replace-me/docker-compose && docker-compose up -d'
             }
         }
         stage('down') {
             steps {
-                sh 'cd todo-replace-me/docker && docker-compose down --rmi local --volumes'
+                sh 'cd todo-replace-me/docker-compose && docker-compose down --rmi local --volumes'
             }
         }
     }
