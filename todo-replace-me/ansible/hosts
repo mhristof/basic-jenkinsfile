@@ -1,0 +1,2 @@
+[all]
+jenkins ansible_host=18.195.10.68 ansible_user=ubuntu

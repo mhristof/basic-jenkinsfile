@@ -1,0 +1,10 @@
+pipeline {
+    agent any
+    stages {
+        stage('ping') {
+            steps {
+                sh 'cd todo-replace-me/ansible && ansible all -m ping'
+            }
+        }
+    }
+}
