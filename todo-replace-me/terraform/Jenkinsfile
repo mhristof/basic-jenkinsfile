@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('init') {
             steps {
-                sh 'cd todo-replace-me/terraform && terraform init --no-color'
+                sh 'cd todo-replace-me/terraform && terraform init -no-color'
             }
         }
         stage('plan') {
             steps {
-                sh 'cd todo-replace-me/terraform && terraform plan --no-color --out tf.plan'
+                sh 'cd todo-replace-me/terraform && terraform plan -no-color -out tf.plan'
             }
         }
         stage('apply') {
